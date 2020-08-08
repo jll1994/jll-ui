@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="row">
+    <!-- <div class="row">
       <jll-button>按钮</jll-button>
       <jll-button type="primary">按钮</jll-button>
       <jll-button type="warning">按钮</jll-button>
@@ -56,8 +56,31 @@
     <jll-input placeholder="请输入用户名" v-model="input" show-password></jll-input>
 
     <jll-switch v-model="isSwitch"></jll-switch>
-    <jll-switch v-model="isSwitch" activeColor="#f0f00f" inactiveColor="#f0f"></jll-switch>
-  
+    <jll-switch v-model="isSwitch" activeColor="#f0f00f" inactiveColor="#f0f"></jll-switch> -->
+
+    <!-- <jll-radio label="1" v-model="gender">男</jll-radio>
+    <jll-radio label="0" v-model="gender">女</jll-radio>
+    <jll-radio-group v-model="genderGroup">
+      <jll-radio label="1">男</jll-radio>
+      <jll-radio label="0">女</jll-radio>
+    </jll-radio-group> -->
+
+    <!-- <jll-checkbox v-model="checkbox">全选</jll-checkbox>
+    <jll-checkbox-group v-model="checkboxGroup">
+      <jll-checkbox label="0">吃饭</jll-checkbox>
+      <jll-checkbox label="1">睡觉</jll-checkbox>
+      <jll-checkbox label="2">打豆豆</jll-checkbox>
+    </jll-checkbox-group> -->
+
+
+    <jll-form :model="model">
+      <jll-form-item label="用户名">
+        <jll-input v-model="model.name"></jll-input>
+      </jll-form-item>
+      <jll-form-item label="选择">
+        <jll-switch v-model="model.isSelected"></jll-switch>
+      </jll-form-item>
+    </jll-form>
   </div>
 </template>
 
@@ -69,6 +92,14 @@ export default {
       visible: false,
       input: "123",
       isSwitch: false,
+      gender: "1",
+      genderGroup: "0",
+      checkbox: true,
+      checkboxGroup: ['0'],
+      model: {
+        name: "张三",
+        isSelected: true
+      }
     };
   },
   methods: {
